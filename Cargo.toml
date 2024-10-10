@@ -1,7 +1,13 @@
 [package]
-name = "cargo-hello"
+name = "shmoo"
 version = "0.1.0"
 edition = "2021"
+license = "MIT OR Apache-2.0"
+description = "Learning Rust: Project Organization & Tooling - shmoo"
+authors = ["Tyler Gillispie <mrteye@gmail.com>"]
+#documentation
+#homepage
+#repository
 
 [dependencies]
 clap = "4.5.20"

@@ -1,26 +1,25 @@
 use clap::{Arg, Command};
+use shmoo::stuff::hey;
 
 fn main() {
-    let matches = Command::new("myapp")
-        .version("1.0")
-        .author("Tyler Gillispie <mrteye@gmail.com>")
-        .about("Does something...")
-        .arg(
-            Arg::new("verbose")
-                .short('v')
-                .long("verbose")
-                .help("Sets level of verbosity.")
-                .action(clap::ArgAction::SetTrue),
-        )
-        .get_matches();
+  let version = env!("CARGO_PKG_VERSION");
+  let about = env!("CARGO_PKG_DESCRIPTION");
 
-    let verbose = matches.get_flag("verbose");
+  let matches = Command::new("shmoo")
+    .version(version)
+    .about(about)
+    .arg(
+      Arg::new("hey")
+        .short('e')
+        .long("hey")
+        .value_parser(clap::value_parser!(String))
+        .help("Identifies a Shmoo: accepts single arg - noun"),
+    )
+    .get_matches();
 
-    if verbose {
-        println!("Verbose enabled.");
-    } else {
-        println!("Verbose not enabled");
-    }
-
-    println!("Hello, world!");
+  if let Some(val) = matches.get_one::<String>("hey") {
+    println!("{}", hey(val))
+  } else {
+    println!("Hello, shmoo!");
+  }
 }
