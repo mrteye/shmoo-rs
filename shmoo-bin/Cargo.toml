@@ -1,0 +1,8 @@
+[package]
+name = "shmoo-bin"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+shmoo = { path = "../shmoo" }
+clap = "4.5.20"

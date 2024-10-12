@@ -1,13 +1,3 @@
-[package]
-name = "shmoo"
-version = "0.1.1"
-edition = "2021"
-license = "MIT OR Apache-2.0"
-description = "Learning Rust: Project Organization & Tooling - shmoo"
-authors = ["Tyler Gillispie <mrteye@gmail.com>"]
-documentation = "https://docs.rs/shmoo"
-homepage = "https://github.com/mrteye/shmoo-rs"
-repository = "https://github.com/mrteye/shmoo-rs"
-
-[dependencies]
-clap = "4.5.20"
+[workspace]
+members = [ "shmoo","shmoo-bin"]
+resolver = "2"
